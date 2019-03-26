@@ -1,41 +1,64 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>DomoMaker</title>
+  <title>PokemonSaver</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
 <body>
-  <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
+  <nav><a href="/login"></a>
     <div class="navlink"><a href="/logout">Log out</a></div>
   </nav>
-  <section id="makeDomo">
-    <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
-      <label for="name">Name: </label>
-      <input id="domoName" type="text" name="name" placeholder="Domo Name"/>
-      <label for="age">Age: </label>
-      <input id="domoAge" type="text" name="age" placeholder="Domo Age"/>
+  <section id="makePokemon">
+    <form id="pokemonForm" name="PokemonForm" action="/maker" method="POST" class="PokemonForm">
+      <label for="pname">Pokemon Type: </label>
+      <input id="pnameI" type="text" name="nickname" placeholder="Bulbasaur"/>
+      <label for="dateCaught">Date Caught: </label>
+      <input id="dateCaughtI" type="date" name="dateCaught" placeholder=""/>
+      <label for="shiny">Shiny?: </label>
+      <select id="shinyI"  name="shiny">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      <label for="combatPower">Combat Power: </label>
+      <input id="combatPowerI" type="number" name="combatPower"/>
+      <label for="height">Height: </label>
+      <input id="heightI" type="number" step="0.01" name="height"/>
+      <label for="weight">Weight: </label>
+      <input id="weightI" type="number" step="0.01" name="weight"/>
+      <label for="gender">Gender: </label>
+      <select id="genderI"  name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <label for="quickA">Quick Attack: </label>
+      <input id="quickAI" type="text" name="quickA" placeholder="Tackle"/>
+      <label for="chargedA">Charged Attack: </label>
+      <input id="chargedAI" type="text" name="chargedA" placeholder="Seed Bomb"/>
+      <label for="iv">IV: </label>
+      <input id="ivI" type="text" name="iv" placeholder="Good"/>
+     
       <input type="hidden" name="_csrf" value={{csrfToken}} />
-      <input class="makeDomoSubmit" type="submit" value="Make Domo" />
+      <input class="makePokemonSubmit" type="submit" value="Make Pokemon" />
     </form>
   </section>
-  <section id="domos">
-    <div class="domo">
-      {{#if domos}}
-        {{#each domos}}
-          <div class="domo"><img src="/assets/img/domoface.jpeg" alt="domo face" class="domoFace"/>
-            <h3 class="domoName">Name: {{this.name}}</h3>
-            <h3 class="domoAge">Age: {{this.age}}</h3>
+  <section id="Pokemon">
+    <div class="Pokemon">
+      {{#if pokemon}}
+        {{#each pokemon}}
+          <div class="Pokemon">
+            <h3 class="PokemonName">Name: {{this.pname}}</h3>
+            <h3 class="PokemonAge">Quick Attack: {{this.quickA}}</h3>
           </div>
         {{/each}}
       {{else}}
-        <h3 class="emptyDomo">No Domos yet"</h3>
+        <h3 class="emptyPokemon">No Pokemon yet"</h3>
       {{/if}}
     </div>
   </section>
-  <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage"></span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
+  <div id="PokemonMessage">
+    <h3><span id="errorMessage"></span></h3>
   </div>
   <script src="/assets/bundle.js"></script>
 </body>
