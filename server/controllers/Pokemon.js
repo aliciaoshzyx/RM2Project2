@@ -8,17 +8,18 @@ const makerPage = (req, res) => {
       console.log(err);
       return res.status(400).json({ error: 'An error occured' });
     }
-    return res.render('app', { csrfToken: req.csrfToken(), Pokemons: docs });
+    return res.render('app', { csrfToken: req.csrfToken(), pokemons: docs });
   });
 };
 
 const makePokemon = (req, res) => {
-  if (!req.body.name || !req.body.age) {
-    return res.status(400).json({ error: 'All fields are required' });
+  console.log(req.body);
+  if (!req.body.pname || !req.body.gender) {
+    return res.status(400).json({ error: 'All fields are required - in make' });
   }
 
-  const PokemonData = {
-    nickname: req.body.nickname,
+  const pokemonData = {
+    pname: req.body.pname,
     dateCaught: req.body.dateCaught,
     shiny: req.body.shiny,
     combatPower: req.body.combatPower,
@@ -31,13 +32,13 @@ const makePokemon = (req, res) => {
     owner: req.session.account._id,
   };
 
-  const newPokemon = new Pokemon.PokemonModel(PokemonData);
+  const newPokemon = new Pokemon.PokemonModel(pokemonData);
 
-  const PokemonPromise = newPokemon.save();
+  const pokemonPromise = newPokemon.save();
 
-  PokemonPromise.then(() => res.json({ redirect: '/maker' }));
+  pokemonPromise.then(() => res.json({ redirect: '/maker' }));
 
-  PokemonPromise.catch((err) => {
+  pokemonPromise.catch((err) => {
     console.log(err);
     if (err.code === 11000) {
       return res.status(400).json({ error: 'Pokemon already exists.' });
@@ -46,7 +47,7 @@ const makePokemon = (req, res) => {
     return res.statuse(400).json({ error: 'An error occured' });
   });
 
-  return PokemonPromise;
+  return pokemonPromise;
 };
 
 

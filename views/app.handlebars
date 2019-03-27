@@ -13,7 +13,7 @@
   <section id="makePokemon">
     <form id="pokemonForm" name="PokemonForm" action="/maker" method="POST" class="PokemonForm">
       <label for="pname">Pokemon Type: </label>
-      <input id="pnameI" type="text" name="nickname" placeholder="Bulbasaur"/>
+      <input id="pnameI" type="text" name="pname" placeholder="Bulbasaur"/>
       <label for="dateCaught">Date Caught: </label>
       <input id="dateCaughtI" type="date" name="dateCaught" placeholder=""/>
       <label for="shiny">Shiny?: </label>
@@ -45,15 +45,23 @@
   </section>
   <section id="Pokemon">
     <div class="Pokemon">
-      {{#if pokemon}}
-        {{#each pokemon}}
+      {{#if pokemons}}
+        {{#each pokemons}}
           <div class="Pokemon">
             <h3 class="PokemonName">Name: {{this.pname}}</h3>
-            <h3 class="PokemonAge">Quick Attack: {{this.quickA}}</h3>
+            <h3 class="PokemonDate">Date caught: {{this.dateCaught}}</h3>
+            <h3 class="PokemonShiny">Shiny: {{this.shiny}}</h3>
+            <h3 class="PokemonCP">Combat Power: {{this.combatPower}}</h3>
+            <h3 class="PokemonHeight">Height: {{this.height}}</h3>
+            <h3 class="PokemonWeight">Weight: {{this.weight}}</h3>
+            <h3 class="PokemonGender">Gender: {{this.gender}}</h3>
+            <h3 class="PokemonQA">Quick Attack: {{this.quickA}}</h3>
+            <h3 class="PokemonCA">Charged Attack: {{this.chargedA}}</h3>
+            <h3 class="PokemonIV">IV: {{this.iv}}</h3>
           </div>
         {{/each}}
       {{else}}
-        <h3 class="emptyPokemon">No Pokemon yet"</h3>
+        <h3 class="emptyPokemon">No Pokemon yet</h3>
       {{/if}}
     </div>
   </section>

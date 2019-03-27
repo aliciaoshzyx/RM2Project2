@@ -58,14 +58,18 @@ $(document).ready(() => {
   $("#pokemonForm").on("submit", (e) => {
     e.preventDefault();
 
-    if($("#pnameI").val() == ''
-      ||$("#quickAI").val() == '' 
-      ||$("#chargedAI").val() == '' 
-      ||$("#ivI").val() == '' ) {
+    if($("#pnameI").val() == '') {
       handleError("All fields are required");
       return false;
     } 
     
+    //other ajax call
+    //need parapeters of the pokemon
+    //needs to return number, types, and picture
+    //$.ajax({url: "", success: function () {
+    //  $
+    //})
+
     sendAjax($("#pokemonForm").attr("action"), $("#pokemonForm").serialize());
 
     return false;

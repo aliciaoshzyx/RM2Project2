@@ -71,7 +71,7 @@ nav:nth-child(1) {
     float:left;
 }
 
-.makeDomoSubmit {
+.makedomoSubmit {
     transition: background-color 0.4s ease;
     display: inline;
     width: 90px;
@@ -81,11 +81,11 @@ nav:nth-child(1) {
     text-decoration: none;
 }
 
-.makeDomoSubmit:link, .makeDomoSubmit:visited, .makeDomoSubmit:hover, .makeDomoSubmit:active {
+.makedomoSubmit:link, .makedomoSubmit:visited, .makedomoSubmit:hover, .makedomoSubmit:active {
     color: white;
 }
 
-.makeDomoSubmit:hover {
+.makedomoSubmit:hover {
     transition: background-color 0.4s ease;
     background-color: #338acc;
 }
@@ -228,7 +228,7 @@ img.domoFace {
     float:left;
 }
 
-h3.emptyDomo {
+h3.emptydomo {
     width: 400px;
     font-size: 1.5em;
     margin: 0 auto;
