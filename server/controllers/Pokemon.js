@@ -12,8 +12,18 @@ const makerPage = (req, res) => {
   });
 };
 
+const communityPage = (req, res) => {
+  Pokemon.PokemonModel.findAll((err, docs) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: 'An error occured' });
+    }
+    return res.render('community', { csrfToken: req.csrfToken(), pokemons: docs });
+  })
+};
+
 const makePokemon = (req, res) => {
-  if (!req.body.pname || !req.body.gender) {
+  if (!req.body.pname ) {
     return res.status(400).json({ error: 'All fields are required - in make' });
   }
 
@@ -56,3 +66,4 @@ const makePokemon = (req, res) => {
 
 module.exports.makerPage = makerPage;
 module.exports.make = makePokemon;
+module.exports.communityPage = communityPage;

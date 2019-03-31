@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>PokemonSaver</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" type="text/css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+</head>
+<body>
+  <nav><a href="/login"></a>
+    <div class="navlink"><a href="/logout">Log out</a></div>
+    <div class="navlink"><a href="/changePass">ChangePassword</a></div>
+    <div class="navlink"><a href='/maker'>My Pokemon</a></div>
+  </nav>
+  
+  <section id="Pokemon">
+    <div class="Pokemon">
+      {{#if pokemons}}
+        {{#each pokemons}}
+          <div class="Pokemon">
+            <img class="PokemonPic" src={{this.picture}}/>
+            <h3 class="PokemonName">Name: {{this.pname}}</h3>
+            <h3 class="PokemonDate">Date caught: {{this.dateCaught}}</h3>
+            <h3 class="PokemonShiny">Shiny: {{this.shiny}}</h3>
+            <h3 class="PokemonCP">Combat Power: {{this.combatPower}}</h3>
+            <h3 class="PokemonHeight">Height: {{this.height}}</h3>
+            <h3 class="PokemonWeight">Weight: {{this.weight}}</h3>
+            <h3 class="PokemonGender">Gender: {{this.gender}}</h3>
+            <h3 class="PokemonQA">Quick Attack: {{this.quickA}}</h3>
+            <h3 class="PokemonCA">Charged Attack: {{this.chargedA}}</h3>
+            <h3 class="PokemonIV">IV: {{this.iv}}</h3>
+            <h3 class="PokemonNum">Number: {{this.number}}</h3>
+            <h3 class="PokemonT1">Type1: {{this.type1}}</h3>
+            <h3 class="PokemonT2">Type2: {{this.type2}}</h3>
+          </div>
+        {{/each}}
+      {{else}}
+        <h3 class="emptyPokemon">No Pokemon yet</h3>
+      {{/if}}
+    </div>
+  </section>
+  <div id="PokemonMessage">
+    <h3><span id="errorMessage"></span></h3>
+  </div>
+  <script src="/assets/bundle.js"></script>
+</body>
+</html>

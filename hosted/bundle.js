@@ -38,6 +38,13 @@ var sendAjax = function sendAjax(action, data) {
 };
 
 $(document).ready(function () {
+  $("#passChangeForm").on("submit", function (e) {
+    e.preventDefault();
+
+    sendAjax($("#passChangeForm").attr("action"), $("#passChangeForm").serialize());
+    $("#errorMessage").val("PasswordChanged");
+  });
+
   $("#signupForm").on("submit", function (e) {
     e.preventDefault();
 
@@ -72,7 +79,7 @@ $(document).ready(function () {
   $("#pokemonForm").on("submit", function (e) {
     e.preventDefault();
 
-    if ($("#pnameI").val() == '') {
+    if ($("#pnameI").val() == '' || $("#dateCaughtI").val() == '' || $("#shinyI").val() == '' || $("#combatPowerI").val() == '' || $("#heightI").val() == '' || $("#weightI").val() == '' || $("#genderI").val() == '' || $("#quickAI").val() == '' || $("#chargedAI").val() == '' || $("#ivI").val() == '') {
       handleError("All fields are required");
       return false;
     }
@@ -94,11 +101,12 @@ $(document).ready(function () {
       dataType: 'json',
       success: function success(result) {
         numb = result.game_indices[0].game_index;
+        //shiny pictures?
         //if($("#shinyI").val() == "true"){
         //  pict = result.sprites.front_shiny;
         //  } else { pict = result.sprites.front_default;}
         type1 = result.types[0].type.name;
-        if (result.types[1].type.name) {
+        if (result.types[1]) {
           type2 = result.types[1].type.name;
         } else {
           type2 = 'none';
@@ -107,13 +115,15 @@ $(document).ready(function () {
 
     });
 
+    //adding a query makes it so the link doesnt break when something adds a /
     if (numb > 0 && numb < 10) {
-      pict = pict + "00" + numb + ".png";
+      pict = pict + "00" + numb + ".png?width=360";
     } else if (numb > 10 && numb < 100) {
-      pict = pict + "0" + numb + ".png";
+      pict = pict + "0" + numb + ".png?width=360";
     } else {
-      pict = pict + numb + ".png";
+      pict = pict + numb + ".png?width=360";
     }
+
     console.log(numb + "," + type1 + "," + type2 + "," + pict);
     $("#picture").val(pict);
     console.log($("#picture").val());
