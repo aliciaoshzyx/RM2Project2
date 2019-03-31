@@ -105,6 +105,7 @@ $(document).ready(() => {
 
             
         });
+      pict = trim(pict);
       console.log(numb + "," + type1 + "," + type2 + "," + pict);
       $("#picture").val(pict);
       $("#num").val(numb);
