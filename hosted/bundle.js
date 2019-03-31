@@ -94,27 +94,36 @@ $(document).ready(function () {
     var type2 = '';
     var pict = 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/';
 
-    $.ajax({
-      url: url,
-      async: false,
-      type: "GET",
-      dataType: 'json',
-      success: function success(result) {
-        numb = result.game_indices[0].game_index;
-        //shiny pictures?
-        //if($("#shinyI").val() == "true"){
-        //  pict = result.sprites.front_shiny;
-        //  } else { pict = result.sprites.front_default;}
-        type1 = result.types[0].type.name;
-        if (result.types[1]) {
-          type2 = result.types[1].type.name;
-        } else {
-          type2 = 'none';
+    if ($("#pnameI").val() == "meltan") {
+      numb = 808;
+      type1 = "steel";
+      type2 = "none";
+    } else if ($("#pnameI").val() == "melmetal") {
+      numb = 809;
+      type1 = "steel";
+      type2 = "none";
+    } else {
+      $.ajax({
+        url: url,
+        async: false,
+        type: "GET",
+        dataType: 'json',
+        success: function success(result) {
+          numb = result.game_indices[0].game_index;
+          //shiny pictures?
+          //if($("#shinyI").val() == "true"){
+          //  pict = result.sprites.front_shiny;
+          //  } else { pict = result.sprites.front_default;}
+          type1 = result.types[0].type.name;
+          if (result.types[1]) {
+            type2 = result.types[1].type.name;
+          } else {
+            type2 = 'none';
+          }
         }
-      }
 
-    });
-
+      });
+    }
     //adding a query makes it so the link doesnt break when something adds a /
     if (numb > 0 && numb < 10) {
       pict = pict + "00" + numb + ".png?width=360";

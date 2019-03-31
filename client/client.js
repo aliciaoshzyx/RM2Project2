@@ -98,7 +98,16 @@ $(document).ready(() => {
      let type1 = '';
      let type2 = '';
      let pict = 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/';
-
+    
+    if($("#pnameI").val() == "meltan"){
+      numb = 808;
+      type1 = "steel";
+      type2 = "none";
+    } else if ( $("#pnameI").val() == "melmetal"){
+      numb = 809;
+      type1 = "steel";
+      type2 = "none";
+    } else {
     $.ajax({ 
          url: url, 
          async: false,
@@ -118,7 +127,7 @@ $(document).ready(() => {
 
             
         });
-      
+      }
       //adding a query makes it so the link doesnt break when something adds a /
       if(numb>0 && numb <10){
         pict = pict + "00" + numb + ".png?width=360";

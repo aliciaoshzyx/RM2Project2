@@ -10,16 +10,17 @@
 </head>
 <body>
   <nav><a href="/login"></a>
-    <div class="navlink"><a href="/logout">Log out</a></div>
-    <div class="navlink"><a href="/changePass">ChangePassword</a></div>
-    <div class="navlink"><a href="/community">Community Posts</a></div>
+    <div class="navlink"><a href="/logout">log out</a></div>
+    <div class="navlink"><a href="/changePass">change Password</a></div>
+    <div class="navlink"><a href="/community">community posts</a></div>
   </nav>
   <section id="makePokemon">
     <form id="pokemonForm" name="PokemonForm" action="/maker" method="POST" class="PokemonForm">
       <label for="pname">Pokemon Type: </label>
-      <input id="pnameI" type="text" name="pname" placeholder="Bulbasaur" list="pokemonList"/>
+      <input id="pnameI" type="text" name="pname" placeholder="Type in me" list="pokemonList"/>
       <datalist id="pokemonList">
-        <select style="display: none;">
+        <!-- dont open be unless you wanna see all the pokemon !-->
+        <select style="display: none;"> 
           <option value="bulbasaur"></option>
           <option value="ivysaur"></option>
           <option value="venusaur"></option>
@@ -171,6 +172,320 @@
           <option value="dragonite"></option>
           <option value="mewtwo"></option>
           <option value="mew"></option>
+          <!-- Gen 2 !-->
+          <option value="chikorita"></option>
+          <option value="bayleef"></option>
+          <option value="meganium"></option>
+          <option value="cyndaquil"></option>
+          <option value="quilava"></option>
+          <option value="typhlosion"></option>
+          <option value="totodile"></option>
+          <option value="croconaw"></option>
+          <option value="feraligatr"></option>
+          <option value="sentret"></option>
+          <option value="furret"></option>
+          <option value="hoothoot"></option>
+          <option value="noctowl"></option>
+          <option value="spinarak"></option>
+          <option value="ariados"></option>
+          <option value="crobat"></option>
+          <option value="chinchou"></option>
+          <option value="lanturn"></option>
+          <option value="pichu"></option>
+          <option value="cleffa"></option>
+          <option value="igglybuff"></option>
+          <option value="togepi"></option>
+          <option value="togetic"></option>
+          <option value="natu"></option>
+          <option value="xatu"></option>
+          <option value="mareep"></option>
+          <option value="flaaffy"></option>
+          <option value="ampharos"></option>
+          <option value="bellossom"></option>
+          <option value="marill"></option>
+          <option value="azumarill"></option>
+          <option value="sudowoodo"></option>
+          <option value="politoed"></option>
+          <option value="hoppip"></option>
+          <option value="skiploom"></option>
+          <option value="jumpluff"></option>
+          <option value="aipom"></option>
+          <option value="sunkern"></option>
+          <option value="sunflora"></option>
+          <option value="yanma"></option>
+          <option value="wooper"></option>
+          <option value="quagsire"></option>
+          <option value="espeon"></option>
+          <option value="umbreon"></option>
+          <option value="murkrow"></option>
+          <option value="slowking"></option>
+          <option value="misdreavus"></option>
+          <option value="unown"></option>
+          <option value="wobboffet"></option>
+          <option value="girafarig"></option>
+          <option value="pineco"></option>
+          <option value="forretress"></option>
+          <option value="dunsparce"></option>
+          <option value="gligar"></option>
+          <option value="steelix"></option>
+          <option value="snubbull"></option>
+          <option value="granbull"></option>
+          <option value="qwilfish"></option>
+          <option value="scizor"></option>
+          <option value="shuckle"></option>
+          <option value="heracross"></option>
+          <option value="sneasel"></option>
+          <option value="teddiursa"></option>
+          <option value="ursaring"></option>
+          <option value="slugma"></option>
+          <option value="magcargo"></option>
+          <option value="swinub"></option>
+          <option value="piloswine"></option>
+          <option value="corsola"></option>
+          <option value="remoraid"></option>
+          <option value="octillery"></option>
+          <option value="delibird"></option>
+          <option value="mantine"></option>
+          <option value="skarmory"></option>
+          <option value="houndour"></option>
+          <option value="houndoom"></option>
+          <option value="kingdra"></option>
+          <option value="phanpy"></option>
+          <option value="donphan"></option>
+          <option value="porygon2"></option>
+          <option value="stantler"></option>
+          <option value="smeargle"></option>
+          <option value="tyrogue"></option>
+          <option value="hitmontop"></option>
+          <option value="smoochum"></option>
+          <option value="elekid"></option>
+          <option value="magby"></option>
+          <option value="miltank"></option>
+          <option value="blissey"></option>
+          <option value="raikou"></option>
+          <option value="entei"></option>
+          <option value="suicune"></option>
+          <option value="larvitar"></option>
+          <option value="pupitar"></option>
+          <option value="tyranitar"></option>
+          <option value="lugia"></option>
+          <option value="ho-oh"></option>
+          <option value="celebi"></option>
+          <!-- Gen 3 !-->
+          <option value="treecko"></option>
+          <option value="grovyle"></option>
+          <option value="sceptile"></option>
+          <option value="torchic"></option>
+          <option value="combusken"></option>
+          <option value="blaziken"></option>
+          <option value="mudkip"></option>
+          <option value="marshtomp"></option>
+          <option value="swampert"></option>
+          <option value="poochyena"></option>
+          <option value="mightyena"></option>
+          <option value="zigzagoon"></option>
+          <option value="linoone"></option>
+          <option value="wurmple"></option>
+          <option value="silcoon"></option>
+          <option value="beautifly"></option>
+          <option value="cascoon"></option>
+          <option value="dustox"></option>
+          <option value="lotad"></option>
+          <option value="lombre"></option>
+          <option value="ludicolo"></option>
+          <option value="seedot"></option>
+          <option value="nuzleaf"></option>
+          <option value="shiftry"></option>
+          <option value="taillow"></option>
+          <option value="swellow"></option>
+          <option value="wingull"></option>
+          <option value="pelipper"></option>
+          <option value="ralts"></option>
+          <option value="kirlia"></option>
+          <option value="gardevoir"></option>
+          <option value="surskit"></option>
+          <option value="masquerain"></option>
+          <option value="shroomish"></option>
+          <option value="breloom"></option>
+          <option value="slakoth"></option>
+          <option value="vigoroth"></option>
+          <option value="slaking"></option>
+          <option value="nicada"></option>
+          <option value="ninjask"></option>
+          <option value="shedinja"></option>
+          <option value="whismur"></option>
+          <option value="loudred"></option>
+          <option value="exploud"></option>
+          <option value="makuhita"></option>
+          <option value="hariyama"></option>
+          <option value="azurill"></option>
+          <option value="marill"></option>
+          <option value="azumarill"></option>
+          <option value="nosepass"></option>
+          <option value="skitty"></option>
+          <option value="delcatty"></option>
+          <option value="sableye"></option>
+          <option value="mawile"></option>
+          <option value="aron"></option>
+          <option value="lairon"></option>
+          <option value="aggron"></option>
+          <option value="meditite"></option>
+          <option value="medicham"></option>
+          <option value="electrike"></option>
+          <option value="manectric"></option>
+          <option value="plusle"></option>
+          <option value="minun"></option>
+          <option value="volbeat"></option>
+          <option value="illumise"></option>
+          <option value="rosalia"></option>
+          <option value="gulpin"></option>
+          <option value="swalot"></option>
+          <option value="carvanha"></option>
+          <option value="sharpedo"></option>
+          <option value="wailmer"></option>
+          <option value="mailord"></option>
+          <option value="numel"></option>
+          <option value="camerupt"></option>
+          <option value="torkoal"></option>
+          <option value="spoink"></option>
+          <option value="grumpig"></option>
+          <option value="spinda"></option>
+          <option value="trapinch"></option>
+          <option value="vibrava"></option>
+          <option value="flygon"></option>
+          <option value="cacnea"></option>
+          <option value="cacturne"></option>
+          <option value="swablu"></option>
+          <option value="altaria"></option>
+          <option value="zangoose"></option>
+          <option value="seviper"></option>
+          <option value="lunatone"></option>
+          <option value="solrock"></option>
+          <option value="barboach"></option>
+          <option value="whiscash"></option>
+          <option value="corphish"></option>
+          <option value="crawdaunt"></option>
+          <option value="baltoy"></option>
+          <option value="claydol"></option>
+          <option value="lileep"></option>
+          <option value="cradily"></option>
+          <option value="anorith"></option>
+          <option value="armaldo"></option>
+          <option value="feebas"></option>
+          <option value="milotic"></option>
+          <option value="castform"></option>
+          <option value="kecleon"></option>
+          <option value="shuppet"></option>
+          <option value="banette"></option>
+          <option value="duskull"></option>
+          <option value="dusclops"></option>
+          <option value="tropius"></option>
+          <option value="absol"></option>
+          <option value="wynaut"></option>
+          <option value="snorunt"></option>
+          <option value="glalie"></option>
+          <option value="spheal"></option>
+          <option value="sealeo"></option>
+          <option value="walrein"></option>
+          <option value="clamperl"></option>
+          <option value="huntail"></option>
+          <option value="gorebyss"></option>
+          <option value="relicanth"></option>
+          <option value="luvdisc"></option>
+          <option value="bagon"></option>
+          <option value="shelgon"></option>
+          <option value="salamance"></option>
+          <option value="beldum"></option>
+          <option value="metang"></option>
+          <option value="metagross"></option>
+          <option value="regirock"></option>
+          <option value="regice"></option>
+          <option value="registeel"></option>
+          <option value="latias"></option>
+          <option value="latios"></option>
+          <option value="kyogre"></option>
+          <option value="groudon"></option>
+          <option value="rayquaza"></option>
+          <option value="jirachi"></option>
+          <option value="deoxys"></option>
+
+          <option value="turtwig"></option>
+          <option value="grotle"></option>
+          <option value="torterra"></option>
+          <option value="chimchar"></option>
+          <option value="monferno"></option>
+          <option value="infernape"></option>
+          <option value="piplup"></option>
+          <option value="prinplup"></option>
+          <option value="empoleon"></option>
+          <option value="starly"></option>
+          <option value="staravia"></option>
+          <option value="staraptor"></option>
+          <option value="bidoof"></option>
+          <option value="bibarel"></option>
+          <option value="kricketot"></option>
+          <option value="kricketune"></option>
+          <option value="shinx"></option>
+          <option value="luxio"></option>
+          <option value="luxray"></option>
+          <option value="budew"></option>
+          <option value="roserade"></option>
+          <option value="cranidos"></option>
+          <option value="rampardos"></option>
+          <option value="shieldon"></option>
+          <option value="bastiodon"></option>
+          <option value="combee"></option>
+          <option value="buizel"></option>
+          <option value="floatzel"></option>
+          <option value="ambipom"></option>
+          <option value="drifloon"></option>
+          <option value="drifblim"></option>
+          <option value="buneary"></option>
+          <option value="lopunny"></option>
+          <option value="mismagius"></option>
+          <option value="honchkrow"></option>
+          <option value="glameow"></option>
+          <option value="purugly"></option>
+          <option value="chingling"></option>
+          <option value="stunky"></option>
+          <option value="skunktank"></option>
+          <option value="bronzor"></option>
+          <option value="bronzong"></option>
+          <option value="happiny"></option>
+          <option value="chatot"></option>
+          <option value="spiritomb"></option>
+          <option value="munchlax"></option>
+          <option value="riolu"></option>
+          <option value="lucario"></option>
+          <option value="skorupi"></option>
+          <option value="drapion"></option>
+          <option value="croagunk"></option>
+          <option value="toxicroak"></option>
+          <option value="carnivine"></option>
+          <option value="finneon"></option>
+          <option value="lumineon"></option>
+          <option value="mantyke"></option>
+          <option value="snover"></option>
+          <option value="abomasnow"></option>
+          <option value="weavile"></option>
+          <option value="lickylicky"></option>
+          <option value="rhyperior"></option>
+          <option value="tangrowth"></option>
+          <option value="electivire"></option>
+          <option value="magmortar"></option>
+          <option value="togekiss"></option>
+          <option value="yanmega"></option>
+          <option value="gliscor"></option>
+          <option value="mamoswine"></option>
+          <option value="porygon-z"></option>
+          <option value="gallade"></option>
+          <option value="dialga"></option>
+          <option value="palkia"></option>
+          <option value="heatran"></option>
+          <option value="giratina"></option>
+          <option value="cresselia"></option>
+
+
         </select>
       </datalist>
       
@@ -178,15 +493,15 @@
       <input id="dateCaughtI" type="date" name="dateCaught" placeholder=""/>
       <label for="shiny">Shiny?: </label>
       <select id="shinyI"  name="shiny">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
+        <option value="shiny">Yes</option>
+        <option value=" ">No</option>
       </select>
       <label for="combatPower">Combat Power: </label>
       <input id="combatPowerI" type="number" name="combatPower"/>
       <label for="height">Height: </label>
-      <input id="heightI" type="number" step="0.01" name="height"/>
+      <input id="heightI" type="number" min="0" step="0.01" name="height"/>
       <label for="weight">Weight: </label>
-      <input id="weightI" type="number" step="0.01" name="weight"/>
+      <input id="weightI" type="number" min="0" step="0.01" name="weight"/>
       <label for="gender">Gender: </label>
       <select id="genderI"  name="gender">
         <option value="male">Male</option>
@@ -212,20 +527,22 @@
       {{#if pokemons}}
         {{#each pokemons}}
           <div class="Pokemon">
-            <img class="PokemonPic" src={{this.picture}}/>
-            <h3 class="PokemonName">Name: {{this.pname}}</h3>
-            <h3 class="PokemonDate">Date caught: {{this.dateCaught}}</h3>
+            <h3 class="PokemonCP">CP: {{this.combatPower}}</h3>
             <h3 class="PokemonShiny">Shiny: {{this.shiny}}</h3>
-            <h3 class="PokemonCP">Combat Power: {{this.combatPower}}</h3>
-            <h3 class="PokemonHeight">Height: {{this.height}}</h3>
-            <h3 class="PokemonWeight">Weight: {{this.weight}}</h3>
-            <h3 class="PokemonGender">Gender: {{this.gender}}</h3>
+            <img class="PokemonPic" src={{this.picture}}/>
+            <h3 class="PokemonNum">Number: {{this.number}}</h3>
+            <h3 class="PokemonName">{{this.pname}}</h3>
+            <h3 class="PokemonDate">Date caught: {{this.dateCaught}}</h3>
+            <h3 class="PokemonWeight">Weight: {{this.weight}}kg</h3>
+            <h3 class="PokemonT">{{this.type1}} </h3>
+            <h3 class="PokemonT2">{{this.type2}}</h3>
+             <h3 class="PokemonHeight">Height: {{this.height}}m</h3>
+            <h3 class="PokemonGender">{{this.gender}}</h3>
             <h3 class="PokemonQA">Quick Attack: {{this.quickA}}</h3>
             <h3 class="PokemonCA">Charged Attack: {{this.chargedA}}</h3>
             <h3 class="PokemonIV">IV: {{this.iv}}</h3>
-            <h3 class="PokemonNum">Number: {{this.number}}</h3>
-            <h3 class="PokemonT1">Type1: {{this.type1}}</h3>
-            <h3 class="PokemonT2">Type2: {{this.type2}}</h3>
+            
+            
           </div>
         {{/each}}
       {{else}}
