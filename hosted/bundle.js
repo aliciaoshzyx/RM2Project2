@@ -77,14 +77,15 @@ $(document).ready(function () {
       return false;
     }
     var url = 'https://pokeapi.co/api/v2/pokemon/' + $("#pnameI").val();
-    console.log(url);
+
+    var url2 = 'https://www.pokemon.com/us/api/pokedex/kalos';
     //other ajax call
     //need parapeters of the pokemon
     //needs to return number, types, and picture
     var numb = 0;
     var type1 = '';
     var type2 = '';
-    var pict = '';
+    var pict = 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/';
 
     $.ajax({
       url: url,
@@ -93,11 +94,9 @@ $(document).ready(function () {
       dataType: 'json',
       success: function success(result) {
         numb = result.game_indices[0].game_index;
-        if ($("#shinyI").val() == "true") {
-          pict = result.sprites.front_shiny;
-        } else {
-          pict = result.sprites.front_default;
-        }
+        //if($("#shinyI").val() == "true"){
+        //  pict = result.sprites.front_shiny;
+        //  } else { pict = result.sprites.front_default;}
         type1 = result.types[0].type.name;
         if (result.types[1].type.name) {
           type2 = result.types[1].type.name;
@@ -107,15 +106,23 @@ $(document).ready(function () {
       }
 
     });
-    pict = trim(pict);
+
+    if (numb > 0 && numb < 10) {
+      pict = pict + "00" + numb + ".png";
+    } else if (numb > 10 && numb < 100) {
+      pict = pict + "0" + numb + ".png";
+    } else {
+      pict = pict + numb + ".png";
+    }
     console.log(numb + "," + type1 + "," + type2 + "," + pict);
     $("#picture").val(pict);
+    console.log($("#picture").val());
     $("#num").val(numb);
     $("#type1").val(type1);
     $("#type2").val(type2);
 
-    console.log($("#type1").val());
     sendAjax($("#pokemonForm").attr("action"), $("#pokemonForm").serialize());
+    console.log($("#picture").val());
     return false;
   });
 });
