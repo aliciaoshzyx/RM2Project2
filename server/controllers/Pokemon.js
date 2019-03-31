@@ -13,7 +13,6 @@ const makerPage = (req, res) => {
 };
 
 const makePokemon = (req, res) => {
-  console.log(req.body);
   if (!req.body.pname || !req.body.gender) {
     return res.status(400).json({ error: 'All fields are required - in make' });
   }
@@ -29,6 +28,10 @@ const makePokemon = (req, res) => {
     quickA: req.body.quickA,
     chargedA: req.body.chargedA,
     iv: req.body.iv,
+    number: req.body.number,
+    picture: req.body.picture,
+    type1: req.body.type1,
+    type2: req.body.type2,
     owner: req.session.account._id,
   };
 

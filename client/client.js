@@ -1,3 +1,18 @@
+//for autocomplete on datalist if used on not supported browser
+$(document).ready(function () {
+  var nativedatalist = !!('list' in document.createElement('input')) && 
+    !!(document.createElement('datalist') && window.HTMLDataListElement);
+
+  if (!nativedatalist) {
+    $('input[list]').each(function () {
+      var availableTags = $('#' + $(this).attr("list")).find('option').map(function () {
+        return this.value;
+      }).get();
+      $(this).autocomplete({ source: availableTags });
+    });
+  }
+});
+
 const handleError = (message) => {
   $("#errorMessage").text(message);
 }
@@ -62,16 +77,42 @@ $(document).ready(() => {
       handleError("All fields are required");
       return false;
     } 
-    
-    //other ajax call
-    //need parapeters of the pokemon
-    //needs to return number, types, and picture
-    //$.ajax({url: "", success: function () {
-    //  $
-    //})
+     let url = 'https://pokeapi.co/api/v2/pokemon/' + $("#pnameI").val();
+     console.log(url);
+     //other ajax call
+     //need parapeters of the pokemon
+     //needs to return number, types, and picture
+     let numb = 0;
+     let type1 = '';
+     let type2 = '';
+     let pict = '';
 
-    sendAjax($("#pokemonForm").attr("action"), $("#pokemonForm").serialize());
+    $.ajax({ 
+         url: url, 
+         async: false,
+         type: "GET",
+         dataType: 'json',
+         success:(result) => {
+              numb = result.game_indices[0].game_index;
+              if($("#shinyI").val() == "true"){
+                pict = result.sprites.front_shiny;
+                } else { pict = result.sprites.front_default;}
+              type1 = result.types[0].type.name;
+              if(result.types[1].type.name){
+                type2 = result.types[1].type.name;
+              } else { type2 = 'none';}
+            }
 
-    return false;
-  });
+            
+        });
+      console.log(numb + "," + type1 + "," + type2 + "," + pict);
+      $("#picture").val(pict);
+      $("#num").val(numb);
+      $("#type1").val(type1);
+      $("#type2").val(type2);
+
+        console.log($("#type1").val());
+     sendAjax($("#pokemonForm").attr("action"), $("#pokemonForm").serialize());
+     return false;
+   });
 });

@@ -3,6 +3,8 @@
   <meta charset="utf-8"/>
   <title>PokemonSaver</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
@@ -13,7 +15,18 @@
   <section id="makePokemon">
     <form id="pokemonForm" name="PokemonForm" action="/maker" method="POST" class="PokemonForm">
       <label for="pname">Pokemon Type: </label>
-      <input id="pnameI" type="text" name="pname" placeholder="Bulbasaur"/>
+      <input id="pnameI" type="text" name="pname" placeholder="Bulbasaur" list="pokemonList"/>
+      <datalist id="pokemonList">
+        <select style="display: none;">
+          <option value="bulbasaur"></option>
+          <option value="ivysaur"></option>
+          <option value="venusaur"></option>
+          <option value="charmander"></option>
+          <option value="charmeleon"></option>
+          <option value="charizard"></option>
+        </select>
+      </datalist>
+      
       <label for="dateCaught">Date Caught: </label>
       <input id="dateCaughtI" type="date" name="dateCaught" placeholder=""/>
       <label for="shiny">Shiny?: </label>
@@ -38,16 +51,21 @@
       <input id="chargedAI" type="text" name="chargedA" placeholder="Seed Bomb"/>
       <label for="iv">IV: </label>
       <input id="ivI" type="text" name="iv" placeholder="Good"/>
-     
+      <input type="hidden" id="picture" type="text" name="picture"/> 
+      <input type="hidden" id="num" type="number" name="number"/> 
+      <input type="hidden" id="type1" type="text" name="type1"/> 
+      <input type="hidden" id="type2" type="text" name="type2" value="none"/> 
       <input type="hidden" name="_csrf" value={{csrfToken}} />
       <input class="makePokemonSubmit" type="submit" value="Make Pokemon" />
     </form>
   </section>
+  
   <section id="Pokemon">
     <div class="Pokemon">
       {{#if pokemons}}
         {{#each pokemons}}
           <div class="Pokemon">
+            <img class="PokemonPic" src= {{this.picture}}/>
             <h3 class="PokemonName">Name: {{this.pname}}</h3>
             <h3 class="PokemonDate">Date caught: {{this.dateCaught}}</h3>
             <h3 class="PokemonShiny">Shiny: {{this.shiny}}</h3>
@@ -58,6 +76,9 @@
             <h3 class="PokemonQA">Quick Attack: {{this.quickA}}</h3>
             <h3 class="PokemonCA">Charged Attack: {{this.chargedA}}</h3>
             <h3 class="PokemonIV">IV: {{this.iv}}</h3>
+            <h3 class="PokemonNum">Number: {{this.number}}</h3>
+            <h3 class="PokemonT1">Type1: {{this.type1}}</h3>
+            <h3 class="PokemonT2">Type2: {{this.type2}}</h3>
           </div>
         {{/each}}
       {{else}}
