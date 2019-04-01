@@ -1,11 +1,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>PokemonSaver</title>
+  <title>pokemonSaver</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" type="text/css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
 <body>
@@ -14,9 +15,9 @@
     <div class="navlink"><a href="/changePass">change Password</a></div>
     <div class="navlink"><a href="/community">community posts</a></div>
   </nav>
-  <section id="makePokemon">
-    <form id="pokemonForm" name="PokemonForm" action="/maker" method="POST" class="PokemonForm">
-      <label for="pname">Pokemon Type: </label>
+  <section id="makepokemon">
+    <form id="pokemonForm" name="pokemonForm" action="/maker" method="POST" class="pokemonForm">
+      <label for="pname">pokemon Type: </label>
       <input id="pnameI" type="text" name="pname" placeholder="Type in me" list="pokemonList"/>
       <datalist id="pokemonList">
         <!-- dont open be unless you wanna see all the pokemon !-->
@@ -519,39 +520,56 @@
       <input type="hidden" id="type1" type="text" name="type1"/> 
       <input type="hidden" id="type2" type="text" name="type2" value="none"/> 
       <input type="hidden" name="_csrf" value={{csrfToken}} />
-      <input class="makePokemonSubmit" type="submit" value="Make Pokemon" />
+      <input class="makepokemonSubmit" type="submit" value="Make pokemon" />
     </form>
   </section>
   
-  <section id="Pokemon">
-    <div class="Pokemon">
+  <section id="pokemon">
+    <div class="pokemon">
       {{#if pokemons}}
         {{#each pokemons}}
-          <div class="Pokemon">
-            <h3 class="PokemonCP">CP: {{this.combatPower}}</h3>
-            <h3 class="PokemonShiny">Shiny: {{this.shiny}}</h3>
-            <img class="PokemonPic" src={{this.picture}}/>
-            <h3 class="PokemonNum">Number: {{this.number}}</h3>
-            <h3 class="PokemonName">{{this.pname}}</h3>
-            <h3 class="PokemonDate">Date caught: {{this.dateCaught}}</h3>
-            <h3 class="PokemonWeight">Weight: {{this.weight}}kg</h3>
-            <h3 class="PokemonT">{{this.type1}} </h3>
-            <h3 class="PokemonT2">{{this.type2}}</h3>
-             <h3 class="PokemonHeight">Height: {{this.height}}m</h3>
-            <h3 class="PokemonGender">{{this.gender}}</h3>
-            <h3 class="PokemonQA">Quick Attack: {{this.quickA}}</h3>
-            <h3 class="PokemonCA">Charged Attack: {{this.chargedA}}</h3>
-            <h3 class="PokemonIV">IV: {{this.iv}}</h3>
+          <div class="pokemonSingle">
+            <div class="row1">
+              <h3 class="pokemonCP">cp: {{this.combatPower}}</h3>
+              <h3 class="pokemonNum">{{this.number}}</h3>
+              <h3 class="pokemonShiny">{{this.shiny}}</h3>
+            </div>
+            <div class="row2">
+              <img class="pokemonPic" src={{this.picture}}/>
+            </div>
+            <div class="row3">
+              <h3 class="pokemonName">{{this.pname}}</h3>
+              <h3 class="pokemonGender">{{this.gender}}</h3>
+            </div>
+            <div class="row4">
+              <h3 class="pokemonWeight">Weight: {{this.weight}}kg</h3>
+              <h3 class="pokemonT">{{this.type1}} </h3>
+              <h3 class="pokemonT2">{{this.type2}}</h3>
+              <h3 class="pokemonHeight">Height: {{this.height}}m</h3>
+            </div>
+            <div class="row5">
+              <h3 class="pokemonQA">Quick Attack: {{this.quickA}}</h3>
+              <h3 class="pokemonCA">Charged Attack: {{this.chargedA}}</h3>
+              <h3 class="pokemonIV">IV: {{this.iv}}</h3>
+            </div>
+            <div class="row6">
+              <h3 class="pokemonDate">Date caught: {{this.dateCaught}}</h3>
+            </div>
+            
+            
+            
+            
+            
             
             
           </div>
         {{/each}}
       {{else}}
-        <h3 class="emptyPokemon">No Pokemon yet</h3>
+        <h3 class="emptypokemon">No pokemon yet</h3>
       {{/if}}
     </div>
   </section>
-  <div id="PokemonMessage">
+  <div id="pokemonMessage">
     <h3><span id="errorMessage"></span></h3>
   </div>
   <script src="/assets/bundle.js"></script>
