@@ -11,9 +11,9 @@
 </head>
 <body>
   <nav><a href="/login"></a>
-    <div class="navlink"><a href="/logout">Log out</a></div>
-    <div class="navlink"><a href="/changePass">ChangePassword</a></div>
-    <div class="navlink"><a href='/maker'>My pokemon</a></div>
+    <div class="navlink"><a href="/logout">log out</a></div>
+    <div class="navlink"><a href="/changePass">change password</a></div>
+    <div class="navlink"><a href='/maker'>my pokemon</a></div>
     <div class="navlink"><a href="/info">information</a></div>
   </nav>
   
@@ -39,19 +39,19 @@
               <h3 id="t2">{{this.type2}}</h3>
             </div>
             <div class="row5">
-              <h3 class="pokemonWeight">weight: {{this.weight}}kg</h3>
+              <h3 class="pokemonWeight">{{this.weight}}kg</h3>
               <h3 class="pokemonGender">{{this.gender}}</h3>
-              <h3 class="pokemonHeight">height: {{this.height}}m</h3>
+              <h3 class="pokemonHeight">{{this.height}}m</h3>
             </div>
             <div class="row6">
-              <h3 class="pokemonQA">quick attack: {{this.quickA}}</h3>
-              <h3 class="pokemonCA">charged attack: {{this.chargedA}}</h3>
+              <h3 class="pokemonQA">{{this.quickA}}</h3>
+              <h3 class="pokemonCA">{{this.chargedA}}</h3>
               <h3 class="pokemonIV">iv: {{this.iv}}</h3>
             </div>
             <div class="row7">
               <h3 class="pokemonDate">date caught: {{this.dateCaught}}</h3>
             </div>
-          </div>
+            </div>
         {{/each}}
       {{else}}
         <h3 class="emptypokemon">No pokemon yet</h3>
