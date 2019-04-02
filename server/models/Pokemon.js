@@ -18,7 +18,7 @@ const PokemonSchema = new mongoose.Schema({
 
   shiny: {
     type: String,
-    required: true,
+    required: false,
   },
 
   combatPower: {
@@ -77,7 +77,7 @@ const PokemonSchema = new mongoose.Schema({
   type2: {
     type: String,
     required: false,
-    default: 'none',
+    default: ' ',
   },
 
   owner: {

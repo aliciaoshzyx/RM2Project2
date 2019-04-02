@@ -96,7 +96,7 @@ $(document).ready(() => {
      //needs to return number, types, and picture
      let numb = 0;
      let type1 = '';
-     let type2 = '';
+     let type2 = 'only';
      let pict = 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/';
     
     if($("#pnameI").val() == "meltan"){
@@ -106,7 +106,7 @@ $(document).ready(() => {
     } else if ( $("#pnameI").val() == "melmetal"){
       numb = 809;
       type1 = "steel";
-      type2 = "none";
+      type2 = "";
     } else {
     $.ajax({ 
          url: url, 
@@ -122,7 +122,7 @@ $(document).ready(() => {
               type1 = result.types[0].type.name;
               if(result.types[1]){
                 type2 = result.types[1].type.name;
-              } else { type2 = 'none';}
+              } else { type2 = 'only';}
             }
 
             

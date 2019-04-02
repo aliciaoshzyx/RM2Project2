@@ -12,6 +12,7 @@ const router = (app) => {
   app.get('/maker', mid.requiresLogin, controllers.Pokemon.makerPage);
   app.post('/maker', mid.requiresLogin, controllers.Pokemon.make);
   app.get('/community', mid.requiresLogin, controllers.Pokemon.communityPage);
+  app.get('/info', mid.requiresLogin, controllers.Pokemon.infoPage);
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };
 

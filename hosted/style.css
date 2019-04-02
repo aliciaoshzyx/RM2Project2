@@ -13,6 +13,12 @@ nav {
     width: 100%;
     height: 50px;
     background-color: black;
+    display: flex;
+    align-content:center;
+}
+
+nav div {
+    flex-grow: 1;
 }
 
 nav:nth-child(1) {
@@ -20,18 +26,15 @@ nav:nth-child(1) {
 }
 
 .navlink {
-    padding: 5px;
-    padding-top: 12px;
-    padding-left: 20px;
     color: white;
     font-size: 1.3em;
     float: left;
+    padding-top: 9px;
 }
 
 .navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
     color: white;
     text-decoration: none;
-    padding: 5px;
     border-radius: 4px;
     background-color: black;
     transition: background-color 0.4s ease;
@@ -42,6 +45,12 @@ nav:nth-child(1) {
     background-color: #31c061;
 }
 
+#info p {
+    margin: 0 auto;
+    text-align:center;
+    width: 500px;
+    padding-top: 10px;
+}
 
 .mainForm {
     height: 300px;
@@ -71,9 +80,9 @@ nav:nth-child(1) {
     margin-top: 14px;
     font-size: 1.2em;
     width: 100px;
-    background-color: #55acee;
-    border-radius: 2px;
-    border-color: #66acee;
+    background-color: #31c061;
+    border-radius: 12px;
+    border-color: #28A251;
     padding: 3px 0px;
     color: white;
     text-decoration: none;
@@ -100,11 +109,25 @@ nav:nth-child(1) {
     box-shadow: 0px 0px 1px 1px #55acee;
 }
 
+.title {
+    color:#BFD8D2;
+    font-size: 4em;
+    text-align:center;
+}
 
-#speech {
-    height: 120px;
-    width: 250px;
-    z-index:300;
+.pokemonForm label{
+    display: inline-block;
+    margin-right: 10px;
+    text-align: right;
+    font-size: 1.2em;
+}
+
+.pokemonForm input {
+    padding: 4px;
+    background-color:#C5C5C5;
+    border-color:#797979;
+    border-radius: 12px;
+    border-style: solid;
 }
 
 #errorMessage {
@@ -141,15 +164,30 @@ nav:nth-child(1) {
 .row1 h3 {
     margin-top: 0;
     margin-bottom: 0;
-    padding-left:10px;
-    padding-right:10px;
     flex-grow: 1;
     text-align: center;
 }
 
+
+.pokemonShiny {
+    background: #A7ECF0;
+    border-radius:12px;
+    font-size: 1em;
+    width: 20px;
+    flex-grow: 1;
+}
+.pokemonShiny:blank {
+    background: white;
+}
+
 .pokemonNum {
+    font-size:2em;
+    flex-grow: 1;
+    width:30px;
+}
+.pokemonCP {
     font-size: 4em;
-    
+    flex-grow: 1;
 }
 
 .row2 {
@@ -174,3 +212,75 @@ nav:nth-child(1) {
     font-size: 3em;
 }
 
+.row4 {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    margin-bottom:0
+}
+
+.row4 h3 {
+    background: #989898;
+    padding: 5px;
+    border-radius: 12px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.pokemonT {
+    text-align:right;
+    padding-right:3px;
+    margin-top: 0;
+    margin-bottom:0
+}
+
+#t2 {
+    text-align:left;
+    margin-top:0;
+    margin-bottom:0
+}
+
+.row5 {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+.row5 h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.row6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row6 h3 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom:0;
+}
+
+.pokemonQA {
+    width: 200px;
+    background:#ECECAE;
+    border-radius:12px;
+    padding:4px;
+    margin: 0 auto;
+}
+
+.pokemonCA{
+    width: 230px;
+    background:#ECD4AE;
+    border-radius:12px;
+    padding:4px;
+    margin: 0 auto;
+}
+
+.row7 h3 {
+    text-align:center;
+}

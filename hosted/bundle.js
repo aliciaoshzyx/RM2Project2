@@ -91,7 +91,7 @@ $(document).ready(function () {
     //needs to return number, types, and picture
     var numb = 0;
     var type1 = '';
-    var type2 = '';
+    var type2 = 'only';
     var pict = 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/';
 
     if ($("#pnameI").val() == "meltan") {
@@ -101,7 +101,7 @@ $(document).ready(function () {
     } else if ($("#pnameI").val() == "melmetal") {
       numb = 809;
       type1 = "steel";
-      type2 = "none";
+      type2 = "";
     } else {
       $.ajax({
         url: url,
@@ -118,7 +118,7 @@ $(document).ready(function () {
           if (result.types[1]) {
             type2 = result.types[1].type.name;
           } else {
-            type2 = 'none';
+            type2 = 'only';
           }
         }
 

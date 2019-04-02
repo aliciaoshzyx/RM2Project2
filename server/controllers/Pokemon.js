@@ -22,6 +22,10 @@ const communityPage = (req, res) => {
   })
 };
 
+const infoPage = (req, res) => {
+  return res.render("info");
+}
+
 const makePokemon = (req, res) => {
   if (!req.body.pname ) {
     return res.status(400).json({ error: 'All fields are required - in make' });
@@ -67,3 +71,4 @@ const makePokemon = (req, res) => {
 module.exports.makerPage = makerPage;
 module.exports.make = makePokemon;
 module.exports.communityPage = communityPage;
+module.exports.infoPage = infoPage;

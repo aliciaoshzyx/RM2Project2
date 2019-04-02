@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>pokemonSaver</title>
+  <title>Pokemon Go Share</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" type="text/css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
@@ -14,6 +14,7 @@
     <div class="navlink"><a href="/logout">Log out</a></div>
     <div class="navlink"><a href="/changePass">ChangePassword</a></div>
     <div class="navlink"><a href='/maker'>My pokemon</a></div>
+    <div class="navlink"><a href="/info">information</a></div>
   </nav>
   
   <section id="pokemon">
@@ -21,20 +22,35 @@
       {{#if pokemons}}
         {{#each pokemons}}
           <div class="pokemonSingle">
-            <img class="pokemonPic" src={{this.picture}}/>
-            <h3 class="pokemonName">Name: {{this.pname}}</h3>
-            <h3 class="pokemonDate">Date caught: {{this.dateCaught}}</h3>
-            <h3 class="pokemonShiny">Shiny: {{this.shiny}}</h3>
-            <h3 class="pokemonCP">Combat Power: {{this.combatPower}}</h3>
-            <h3 class="pokemonHeight">Height: {{this.height}}</h3>
-            <h3 class="pokemonWeight">Weight: {{this.weight}}</h3>
-            <h3 class="pokemonGender">Gender: {{this.gender}}</h3>
-            <h3 class="pokemonQA">Quick Attack: {{this.quickA}}</h3>
-            <h3 class="pokemonCA">Charged Attack: {{this.chargedA}}</h3>
-            <h3 class="pokemonIV">IV: {{this.iv}}</h3>
-            <h3 class="pokemonNum">Number: {{this.number}}</h3>
-            <h3 class="pokemonT1">Type1: {{this.type1}}</h3>
-            <h3 class="pokemonT2">Type2: {{this.type2}}</h3>
+            <div class="row1">
+              <h3 class="pokemonNum">#{{this.number}}</h3>
+              <h3 class="pokemonCP">cp:{{this.combatPower}}</h3>
+              <h3 class="pokemonShiny">{{this.shiny}}</h3>
+            </div>
+            <div class="row2">
+              <img class="pokemonPic" src={{this.picture}}/>
+            </div>
+            <div class="row3">
+              <h3 class="pokemonName">{{this.pname}}</h3>
+              
+            </div>
+            <div class="row4">
+              <h3 class="pokemonT">{{this.type1}} </h3>
+              <h3 id="t2">{{this.type2}}</h3>
+            </div>
+            <div class="row5">
+              <h3 class="pokemonWeight">weight: {{this.weight}}kg</h3>
+              <h3 class="pokemonGender">{{this.gender}}</h3>
+              <h3 class="pokemonHeight">height: {{this.height}}m</h3>
+            </div>
+            <div class="row6">
+              <h3 class="pokemonQA">quick attack: {{this.quickA}}</h3>
+              <h3 class="pokemonCA">charged attack: {{this.chargedA}}</h3>
+              <h3 class="pokemonIV">iv: {{this.iv}}</h3>
+            </div>
+            <div class="row7">
+              <h3 class="pokemonDate">date caught: {{this.dateCaught}}</h3>
+            </div>
           </div>
         {{/each}}
       {{else}}
