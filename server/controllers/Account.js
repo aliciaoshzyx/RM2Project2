@@ -101,7 +101,7 @@ const changePassword = (request, response) => {
   }
 
   return Account.AccountModel.updatePassword(req.body.oldPass, req.body.newPass, (err) => {
-    console.log("in changePassword");
+    console.log('in changePassword');
     if (err) {
       console.log(err);
       return res.status(400).json({ error: 'An error occured' });

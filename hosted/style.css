@@ -39,11 +39,36 @@ nav:nth-child(1) {
     border-radius: 4px;
     background-color: black;
     transition: background-color 0.4s ease;
+    padding: 5px;
 }
 
 .navlink a:hover {
     transition: background-color 0.8s ease;
     background-color: #31c061;
+}
+
+#makePokemon{
+    display: flex;
+    flex-direction:row;
+}
+
+#makePokemon div {
+    flex-grow:1;
+}
+
+.ads {
+    display: flex;
+    flex-direction:column;
+    min-width: 0;
+}
+
+.ads div {
+    border: 5px solid black;
+    width: 100%;
+    margin: 1em;
+    text-align:center;
+    color:grey;
+    
 }
 
 #info p {
@@ -190,8 +215,8 @@ nav:nth-child(1) {
 
 .pokemonSingle {
     margin: 0 auto;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top: 1em;
+    margin-bottom: 1em;
     color: black;
     border: 8px solid black;
     border-radius: 12px;
@@ -259,7 +284,7 @@ nav:nth-child(1) {
     display: flex;
     flex-direction: row;
     justify-content:center;
-    margin-bottom:0
+    margin-bottom:10px;
 }
 
 .row4 h3 {

@@ -48,11 +48,10 @@ const validatePassword = (doc, password, callback) => {
 };
 
 AccountSchema.statics.updatePassword = (oldPass, newPass, callback) => {
-  console.log("in model update");
-  console.log(oldPass + " " + newPass);
-  AccountModel.findOneAndUpdate({ "password" : oldPass },
-  { $set: { "password" : newPass } }).exec(callback)
-
+  console.log('in model update');
+  console.log(`${oldPass} ${newPass}`);
+  AccountModel.findOneAndUpdate({ password: oldPass },
+  { $set: { password: newPass } }).exec(callback);
 };
 
 AccountSchema.statics.findByUsername = (name, callback) => {

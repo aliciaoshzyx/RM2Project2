@@ -17,9 +17,14 @@
     <div class="navlink"><a href="/info">information</a></div>
   </nav>
   <section id="makepokemon">
+    <div class="ads">
+      <div>I'm an ad for something</div>
+      <div>You shoudl buy this thing</div>
+    </div>
+    <div>
     <h1 class="title">add a new pokemon</h1>
     <form id="pokemonForm" name="pokemonForm" action="/maker" method="POST" class="pokemonForm">
-      <label for="pname">pokemon Type: </label>
+      <label for="pname">pokemon type: </label>
       <input id="pnameI" type="text" name="pname" placeholder="Type in me" list="pokemonList"/>
       <datalist id="pokemonList">
         <!-- dont open be unless you wanna see all the pokemon !-->
@@ -495,29 +500,30 @@
         </select>
       </datalist>
       
-      <label for="dateCaught">Date Caught: </label>
+      <label for="dateCaught">date caught: </label>
       <input id="dateCaughtI" type="date" name="dateCaught" placeholder=""/>
-      <label for="shiny">Shiny?: </label>
+      <label for="shiny">shiny?: </label>
       <select id="shinyI"  name="shiny">
-        <option value="shiny">Yes</option>
-        <option value=" ">No</option>
+        <option value="shiny">yes</option>
+        <option value=" ">no</option>
       </select>
-      <label for="combatPower">Combat Power: </label>
+      <label for="combatPower">combat power: </label>
       <input id="combatPowerI" type="number" name="combatPower"/>
-      <label for="height">Height: </label>
+      <label for="height">height: </label>
       <input id="heightI" type="number" min="0" step="0.01" name="height"/>
-      <label for="weight">Weight: </label>
+      <label for="weight">weight: </label>
       <input id="weightI" type="number" min="0" step="0.01" name="weight"/>
-      <label for="gender">Gender: </label>
+      <label for="gender">gender: </label>
       <select id="genderI"  name="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="none">none</option>
       </select>
-      <label for="quickA">Quick Attack: </label>
+      <label for="quickA">quick attack: </label>
       <input id="quickAI" type="text" name="quickA" placeholder="Tackle"/>
-      <label for="chargedA">Charged Attack: </label>
+      <label for="chargedA">charged attack: </label>
       <input id="chargedAI" type="text" name="chargedA" placeholder="Seed Bomb"/>
-      <label for="iv">IV: </label>
+      <label for="iv">iv: </label>
       <input id="ivI" type="text" name="iv" placeholder="Good"/>
       <input type="hidden" id="picture" type="text" name="picture"/> 
       <input type="hidden" id="num" type="number" name="number"/> 
@@ -526,6 +532,11 @@
       <input type="hidden" name="_csrf" value={{csrfToken}} />
       <input id="sub" class="makepokemonSubmit" type="submit" value="Make pokemon" />
     </form>
+    </div>
+    <div class="ads">
+      <div>Check out this thing</div>
+      <div>Wow what a cool product</div>
+    </div>
   </section>
   
   <section id="pokemon">

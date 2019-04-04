@@ -109,9 +109,7 @@ PokemonSchema.statics.toAPI = (doc) => ({
   type2: doc.type2,
 });
 
-PokemonSchema.statics.findAll = (callback) => {
-  return PokemonModel.find().exec(callback);
-}
+PokemonSchema.statics.findAll = (callback) => PokemonModel.find().exec(callback);
 
 PokemonSchema.statics.findByOwner = (ownerId, callback) => {
   const search = {
