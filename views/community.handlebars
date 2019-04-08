@@ -22,6 +22,7 @@
       {{#if pokemons}}
         {{#each pokemons}}
           <div class="pokemonSingle">
+            <h3 class="pokemonUser">trainer: {{this.user}}</h3>
             <div class="row1">
               <h3 class="pokemonNum">#{{this.number}}</h3>
               <h3 class="pokemonCP">cp:{{this.combatPower}}</h3>
@@ -50,6 +51,7 @@
             </div>
             <div class="row7">
               <h3 class="pokemonDate">date caught: {{this.dateCaught}}</h3>
+              
             </div>
             </div>
         {{/each}}

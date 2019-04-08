@@ -45,6 +45,7 @@ const makePokemon = (req, res) => {
     type1: req.body.type1,
     type2: req.body.type2,
     owner: req.session.account._id,
+    user: req.session.account.username,
   };
 
   const newPokemon = new Pokemon.PokemonModel(pokemonData);

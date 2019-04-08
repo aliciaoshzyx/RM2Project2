@@ -90,6 +90,11 @@ const PokemonSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+
+  user: {
+    type:String,
+    required: true,
+  }
 });
 
 PokemonSchema.statics.toAPI = (doc) => ({
@@ -107,6 +112,8 @@ PokemonSchema.statics.toAPI = (doc) => ({
   number: doc.number,
   type1: doc.type1,
   type2: doc.type2,
+  owner: doc.owner,
+  user: doc.user,
 });
 
 PokemonSchema.statics.findAll = (callback) => PokemonModel.find().exec(callback);
@@ -118,7 +125,7 @@ PokemonSchema.statics.findByOwner = (ownerId, callback) => {
 
   return PokemonModel.find(search)
   .select(`pname dateCaught shiny combatPower height weight 
-  gender quickA chargedA iv number picture type1 type2`)
+  gender quickA chargedA iv number picture type1 type2 owner user`)
   .exec(callback);
 };
 
