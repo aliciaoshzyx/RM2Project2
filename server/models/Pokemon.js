@@ -92,9 +92,9 @@ const PokemonSchema = new mongoose.Schema({
   },
 
   user: {
-    type:String,
+    type: String,
     required: true,
-  }
+  },
 });
 
 PokemonSchema.statics.toAPI = (doc) => ({

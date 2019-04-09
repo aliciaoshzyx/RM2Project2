@@ -91,8 +91,7 @@ const changePassword = (request, response) => {
   req.body.oldPass = `${req.body.oldPass}`;
   req.body.newPass = `${req.body.newPass}`;
   req.body.newPass2 = `${req.body.newPass2}`;
-  let username = req.session.account.username;
-  let auth;
+  const username = req.session.account.username;
   if (!req.body.oldPass || !req.body.newPass || !req.body.newPass2) {
     return res.status(400).json({ error: 'All fields are required' });
   }
@@ -100,32 +99,25 @@ const changePassword = (request, response) => {
   if (req.body.newPass !== req.body.newPass2) {
     return res.status(400).json({ error: 'Passwords do not match' });
   }
-  auth = Account.AccountModel.authenticate(username, req.body.oldPass, (err, account) => {
+  const auth = Account.AccountModel.authenticate(username, req.body.oldPass, (err, account) => {
     if (err || !account) {
       return res.status(401).json({ error: 'Old Password not correct' });
     }
 
     return true;
   });
-  if (auth){
- return Account.AccountModel.generateHash(req.body.newPass,(salt, hash) => {
-    const accountData = {
-      username: username,
-      salt,
-      password: hash,
-    };
-
-    return Account.AccountModel.updatePassword(username, salt, hash, (err) => {
+  if (auth) {
+    return Account.AccountModel.generateHash(req.body.newPass, (salt, hash) =>
+    Account.AccountModel.updatePassword(username, salt, hash, (err) => {
       console.log('in changePassword');
       if (err) {
         console.log(err);
         return res.status(400).json({ error: 'An error occured' });
       }
-      return res.json({ redirect: '/logout' });;
-    });
-  });
+      return res.json({ redirect: '/logout' });
+    }));
   }
-  
+  return false;
 };
 
 module.exports.loginPage = loginPage;
