@@ -1,7 +1,5 @@
 //for autocomplete on datalist if used on not supported browser
-
 //credit: https://github.com/thgreasi/datalist-polyfill
-​
 $(document).ready(function () {
   var nativedatalist = !!('list' in document.createElement('input')) && 
     !!(document.createElement('datalist') && window.HTMLDataListElement);
