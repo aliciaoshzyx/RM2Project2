@@ -77,7 +77,8 @@ nav:nth-child(1) {
     margin: 0 auto;
     text-align:center;
     width: 500px;
-    padding-top: 10px;
+    padding-top: 50px;
+    font-size: 1.5em;
 }
 
 .mainForm {
@@ -116,6 +117,22 @@ nav:nth-child(1) {
     text-decoration: none;
 }
 
+.formSubmitC{
+    transition: background-color 0.4s ease;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 14px;
+    font-size: 1.2em;
+    width: 220px;
+    background-color: #31c061;
+    border-radius: 12px;
+    border-color: #28A251;
+    padding: 3px 0px;
+    color: white;
+    text-decoration: none;
+}
+
 .formSubmit:link, .formSubmit:visited, .formSubmit:hover, .formSubmit:active {
     color: white;
 }
@@ -143,6 +160,27 @@ nav:nth-child(1) {
     text-align:center;
     margin-top:10px;
     margin-bottom:10px;
+}
+
+#warn {
+    margin:0 auto;
+    margin-top:10em;
+    text-align:center;
+    color:yellow;
+}
+#passChangeForm {
+    width: 500px;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+#passChangeForm label{
+    width: 200px;
+}
+
+#pokemonChangeForm submit {
+    background:#31c061;
+    padding: 10px;
 }
 
 .pokemonForm {
