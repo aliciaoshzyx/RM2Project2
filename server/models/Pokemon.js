@@ -12,7 +12,7 @@ const PokemonSchema = new mongoose.Schema({
   },
 
   dateCaught: {
-    type: Date,
+    type: String,
     required: true,
   },
 
