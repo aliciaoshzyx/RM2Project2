@@ -14,6 +14,7 @@ const router = (app) => {
   app.get('/community', mid.requiresLogin, controllers.Pokemon.communityPage);
   app.get('/info', mid.requiresLogin, controllers.Pokemon.infoPage);
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
+  app.get('/*', controllers.notFound);
 };
 
 module.exports = router;
